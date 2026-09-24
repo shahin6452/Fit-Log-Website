@@ -53,7 +53,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:navbar-start">
-                    <a className="text-xl font-bold">
+                    <Link href="#" className="text-xl font-bold">
                         <div className="flex gap-2 justify-center items-center">
                             <Image
                                 src="/assets/logo.png"
@@ -66,7 +66,7 @@ const Navbar = () => {
                                 <h2>FITLOG</h2>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* menu menu-horizontal gap-2  */}
