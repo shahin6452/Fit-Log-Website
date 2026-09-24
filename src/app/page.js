@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroSection from "./components/Hero";
+import Library from "./components/Library";
 
 export default function Home() {
 
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection></HeroSection>
+      <Library></Library>
     </div>
     
   );
