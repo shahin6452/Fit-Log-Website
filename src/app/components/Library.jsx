@@ -14,9 +14,9 @@ const Library = async() => {
     return (
         <div className='mt-20' id='library'>
             <div className='container mx-auto'>
-                <h2 className={`${oswald.className} text-3xl font-semibold`}>THE LIBRARY</h2>
-                <p className='text-[#9CA3AF]'>Twelve lifts covering every major muscle group.</p>
-                <div>
+                <h2 className={`${oswald.className} text-3xl font-semibold mb-2`}>THE LIBRARY</h2>
+                <p className='text-[#9CA3AF] font-bold text mb-7'>Twelve lifts covering every major muscle group.</p>
+                <div className='grid grid-cols-3 gap-5'>
                     
                     {
                         exercises.map(exercise => 

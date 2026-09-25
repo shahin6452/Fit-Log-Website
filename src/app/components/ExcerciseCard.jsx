@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { oswald } from "../fonts";  
+import { oswald } from "../fonts";
 
 const ExcerciseCard = ({ exercise }) => {
     const { image, muscleGroups, name, equipment, duration, caloriesBurned, rating } = exercise
@@ -19,38 +19,28 @@ const ExcerciseCard = ({ exercise }) => {
                     />
                 </figure>
 
-                {/* Content */}
                 <div className="card-body p-6">
-
-                    {/* Tags */}
                     <div className="flex gap-2">
-                        <span className="badge bg-[#C2F800] text-black border-none font-bold">
-                            {muscleGroups[0]}
-                        </span>
-
-                        <span className="badge bg-[#C2F800] text-black border-none font-bold">
-                            {muscleGroups[1]}
-                        </span>
+                        {
+                            muscleGroups.map(elem => <div className="badge bg-[#C2F800] text-black border-none font-bold">{elem}</div>)
+                        }
                     </div>
 
-                    {/* Title */}
                     <h2 className={`text-2xl font-semibold text-white ${oswald.className}`}>
                         {name}
                     </h2>
 
-                    {/* Subtitle */}
-                    <p className="text-[#9CA3AF]">
-                        Barbell, Bench
+                    <p className="text-[#9CA3AF] mb-4">
+                        {equipment}
                     </p>
 
-                    {/* Divider */}
-                    <div className="border-t border-[#24262d]"></div>
+                    
 
                     {/* Info */}
                     <div className="flex items-center gap-5 text-sm text-[#9CA3AF]">
-                        <span>◷ 25 min</span>
-                        <span>● 180 kcal</span>
-                        <span>☆ 4.8</span>
+                        <span>◷ {duration}</span>
+                        <span>● {caloriesBurned} kcal</span>
+                        <span>☆ {rating}</span>
                     </div>
 
                 </div>
