@@ -1,12 +1,21 @@
 import Image from 'next/image';
 import React from 'react';
 import ExcerciseActions from './ExcerciseActions';
+import { notFound } from 'next/navigation';
 
 const ExcerciseCardDetail = async ({ params }) => {
     const { libraryId } = await params;
 
     const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${libraryId}`);
+    if (!res.ok) {
+        notFound();
+    }
+
     const data = await res.json();
+
+    if (!data?.id) {
+        notFound();
+    }
 
     const {
         image,

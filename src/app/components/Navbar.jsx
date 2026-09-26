@@ -7,99 +7,167 @@ import { PlanContext } from '../context/PlanContext';
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-    const pathName = usePathname()
+
+    const pathName = usePathname();
 
     const { todayPlan, savedExercises } = useContext(PlanContext);
 
     return (
-        <div className='mt-3 mb-6'>
-            <div className="navbar container mx-auto">
+        <div className="sticky top-0 z-50 mt-3 mb-6 border-b border-[#2a2e36] bg-[#080a0d]">
 
-                {/* Mobile Menu */}
+            <div className="navbar container mx-auto min-h-16 px-0">
+
+                {/* ================= MOBILE MENU ================= */}
                 <div className="navbar-start md:hidden">
+
                     <div className="dropdown">
+
                         <label
                             tabIndex={0}
-                            className="btn btn-ghost text-xl px-2"
+                            className="btn btn-ghost px-2 text-xl text-gray-300"
                         >
                             ☰
                         </label>
 
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-44"
+                            className="menu menu-sm dropdown-content z-50 mt-3 w-48 rounded-box border border-[#2a2e36] bg-[#101217] p-2 shadow-xl"
                         >
-                            <li><Link className={` ${pathName === '/' ? 'text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/'>Workouts</Link></li>
-                            <li><Link className={` ${pathName === '/plans' ? 'text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/plans'>My Plan</Link></li>
 
                             <li>
-                                <a>
+                                <Link
+                                    href="/"
+                                    className={
+                                        pathName === '/'
+                                            ? 'text-lime-400'
+                                            : 'text-gray-300 hover:bg-lime-500/10 hover:text-lime-400'
+                                    }
+                                >
+                                    Workouts
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link
+                                    href="/my-plan"
+                                    className={
+                                        pathName === '/my-plan'
+                                            ? 'text-lime-400'
+                                            : 'text-gray-300 hover:bg-lime-500/10 hover:text-lime-400'
+                                    }
+                                >
+                                    My Plan
+                                </Link>
+                            </li>
+
+                            <li>
+                                <a className="text-gray-300">
                                     Plan
-                                    <span className="ml-2 w-6 h-6 rounded-full bg-lime-400 text-black font-semibold inline-flex items-center justify-center">
+
+                                    <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-lime-400 text-xs font-semibold text-black">
                                         {todayPlan.length}
                                     </span>
                                 </a>
                             </li>
 
                             <li>
-                                <a>
+                                <a className="text-gray-300">
                                     Saved
-                                    <span className="ml-2 w-6 h-6 rounded-full border border-gray-600 border-dotted font-semibold inline-flex items-center justify-center">
+
+                                    <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-dotted border-gray-600 text-xs font-semibold">
                                         {savedExercises.length}
                                     </span>
                                 </a>
                             </li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
 
-                {/* Logo */}
+                {/* ================= LOGO ================= */}
                 <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:navbar-start">
-                    <Link href="/" className="text-xl font-bold">
-                        <div className="flex gap-2 justify-center items-center">
+
+                    <Link href="/">
+                        <div className="flex items-center justify-center gap-2">
+
                             <Image
                                 src="/assets/logo.png"
-                                alt="logo"
+                                alt="FITLOG logo"
                                 width={30}
                                 height={30}
                             />
 
-                            <div>
-                                <h2>FITLOG</h2>
-                            </div>
+                            <h2 className="text-xl font-bold tracking-wide text-white">
+                                FITLOG
+                            </h2>
+
                         </div>
                     </Link>
+
                 </div>
 
-                {/* menu menu-horizontal gap-2  */}
-                {/* Desktop Center */}
-                <div className="hidden md:flex navbar-center">
+
+                {/* ================= DESKTOP MENU ================= */}
+                <div className="navbar-center hidden md:flex">
+
                     <ul className="menu menu-horizontal gap-2">
-                        <li><Link className={`rounded-full px-4 py-1 ${pathName === '/' ? 'bg-lime-500/20 text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/'>Workouts</Link></li>
-                        <li><Link className={`rounded-full px-4 py-1 ${pathName === '/plans' ? 'bg-lime-500/20 text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/plans'>My Plan</Link></li>
+
+                        <li>
+                            <Link
+                                href="/"
+                                className={`rounded-full px-4 py-1 ${pathName === '/'
+                                        ? 'bg-lime-500/20 text-lime-400'
+                                        : 'text-gray-300 hover:bg-lime-500/10 hover:text-lime-400'
+                                    }`}
+                            >
+                                Workouts
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                href="/my-plan"
+                                className={`rounded-full px-4 py-1 ${pathName === '/my-plan'
+                                        ? 'bg-lime-500/20 text-lime-400'
+                                        : 'text-gray-300 hover:bg-lime-500/10 hover:text-lime-400'
+                                    }`}
+                            >
+                                My Plan
+                            </Link>
+                        </li>
+
                     </ul>
+
                 </div>
 
 
-                {/* Desktop Right */}
-                <div className="hidden md:flex navbar-end gap-5 text-sm">
-                    <span>
+                {/* ================= DESKTOP RIGHT ================= */}
+                <div className="navbar-end hidden gap-5 text-sm text-gray-300 md:flex">
+
+                    <span className="flex items-center">
                         Plan
-                        <span className="ml-2 w-6 h-6 rounded-full bg-lime-400 text-black font-semibold inline-flex items-center justify-center">
-                            0
+
+                        <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-lime-400 text-xs font-semibold text-black">
+                            {todayPlan.length}
                         </span>
                     </span>
 
-                    <span>
+
+                    <span className="flex items-center">
                         Saved
-                        <span className="ml-2 w-6 h-6 rounded-full border border-gray-600 border-dotted  font-semibold inline-flex items-center justify-center">
-                            0
+
+                        <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-dotted border-gray-600 text-xs font-semibold">
+                            {savedExercises.length}
                         </span>
                     </span>
+
                 </div>
 
             </div>
+
         </div>
     );
 };

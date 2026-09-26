@@ -2,6 +2,7 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import PlanProvider from "./context/PlanContext";
+import Footer from "./components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         <PlanProvider>
           <Navbar/>
           {children}
+          <Footer/>
         </PlanProvider>
         
       </body>
