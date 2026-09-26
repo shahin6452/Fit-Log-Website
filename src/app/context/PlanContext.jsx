@@ -23,11 +23,15 @@ const PlanProvider = ({ children }) => {
     const [completedExercises, setCompletedExercises] = useState([]);
 
     const removeFromPlan = (id) => {
-        setTodayPlan(todayPlan.filter((item) => item.id !== id));
+        setTodayPlan((prevPlan) =>
+            prevPlan.filter((item) => item.id !== id)
+        );
     };
 
     const removeFromSaved = (id) => {
-        setSavedExercises(savedExercises.filter((item) => item.id !== id));
+        setSavedExercises((prevSaved) =>
+            prevSaved.filter((item) => item.id !== id)
+        );
     };
 
     const sharedData = {

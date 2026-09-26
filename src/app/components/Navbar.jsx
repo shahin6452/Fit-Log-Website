@@ -15,9 +15,9 @@ const Navbar = () => {
     return (
         <div className="sticky top-0 z-50 mt-3 mb-6 border-b border-[#2a2e36] bg-[#080a0d]">
 
-            <div className="navbar container mx-auto min-h-16 px-0">
+            <div className="navbar container mx-auto min-h-16 px-4 sm:px-6 lg:px-0">
 
-                {/* ================= MOBILE MENU ================= */}
+                {/*  MOBILE MENU  */}
                 <div className="navbar-start md:hidden">
 
                     <div className="dropdown">
@@ -36,7 +36,7 @@ const Navbar = () => {
 
                             <li>
                                 <Link
-                                    href="/"
+                                    href="/#library"
                                     className={
                                         pathName === '/'
                                             ? 'text-lime-400'
@@ -117,7 +117,7 @@ const Navbar = () => {
 
                         <li>
                             <Link
-                                href="/"
+                                href="/#library"
                                 className={`rounded-full px-4 py-1 ${pathName === '/'
                                         ? 'bg-lime-500/20 text-lime-400'
                                         : 'text-gray-300 hover:bg-lime-500/10 hover:text-lime-400'
@@ -147,22 +147,22 @@ const Navbar = () => {
                 {/* ================= DESKTOP RIGHT ================= */}
                 <div className="navbar-end hidden gap-5 text-sm text-gray-300 md:flex">
 
-                    <span className="flex items-center">
+                    <Link href="/my-plan" className="flex items-center">
                         Plan
 
                         <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-lime-400 text-xs font-semibold text-black">
                             {todayPlan.length}
                         </span>
-                    </span>
+                    </Link>
 
 
-                    <span className="flex items-center">
+                    <Link href="/my-plan" className="flex items-center">
                         Saved
 
                         <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-dotted border-gray-600 text-xs font-semibold">
                             {savedExercises.length}
                         </span>
-                    </span>
+                    </Link>
 
                 </div>
 
