@@ -3,7 +3,7 @@ import { oswald } from "../fonts";
 import ExcerciseCard from './ExcerciseCard';
 
 const getExercises = async () => {
-    const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
+    const res = await fetch('https://api.api-store.workers.dev/api/fitlog');
     return res.json();
 };
 

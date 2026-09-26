@@ -108,7 +108,7 @@ const PlanPage = () => {
                             My Plan
                         </h1>
 
-                        <p className="mt-1 text-sm text-gray-500">
+                        <p className="mt-1 text-sm text-gray-300">
                             Cap of five lifts for today. Finish them, then load more.
                         </p>
                     </div>
@@ -271,7 +271,7 @@ const PlanPage = () => {
                                         {activeTab === "today" && (
                                             <button
                                                 onClick={() => handleMarkAsDone(exercise)}
-                                                className="btn h-8 min-h-0 flex-1 rounded-full border-0 bg-[#C2F800] px-4 text-[12px] font-semibold text-black hover:bg-[#b5eb00] sm:flex-none"
+                                                className="btn h-8 min-h-0 flex-1 rounded-full border-0 bg-[#C2F800] px-4 text-[10px] font-semibold text-black hover:bg-[#b5eb00] sm:flex-none"
                                             >
                                                 <Check size={12} />
                                                 Mark as Done
@@ -309,7 +309,7 @@ const PlanPage = () => {
                             </p>
 
                             <Link
-                                href="/"
+                                href="/#library"
                                 className="mt-4 btn h-9 min-h-0 rounded-full border-0 bg-[#C2F800] px-7 text-[12px] text-black hover:bg-[#b5eb00]"
                             >
                                 Go to workouts

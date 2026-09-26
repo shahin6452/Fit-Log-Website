@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 const ExcerciseCardDetail = async ({ params }) => {
     const { libraryId } = await params;
 
-    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${libraryId}`);
+    const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${libraryId}`);
     if (!res.ok) {
         notFound();
     }
