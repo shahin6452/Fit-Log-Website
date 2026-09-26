@@ -1,6 +1,7 @@
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import PlanProvider from "./context/PlanContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,8 +20,12 @@ export default function RootLayout({ children }) {
       className={`${inter.className} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
-        {children}
+        
+        <PlanProvider>
+          <Navbar/>
+          {children}
+        </PlanProvider>
+        
       </body>
     </html>
   );

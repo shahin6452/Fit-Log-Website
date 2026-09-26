@@ -2,11 +2,15 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import { PlanContext } from '../context/PlanContext';
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const pathName = usePathname()
+
+    const { todayPlan, savedExercises } = useContext(PlanContext);
+
     return (
         <div className='mt-3 mb-6'>
             <div className="navbar container mx-auto">
@@ -31,8 +35,8 @@ const Navbar = () => {
                             <li>
                                 <a>
                                     Plan
-                                    <span className="badge bg-lime-400 text-black font-semibold badge-xs ml-1">
-                                        0
+                                    <span className="ml-2 w-6 h-6 rounded-full bg-lime-400 text-black font-semibold inline-flex items-center justify-center">
+                                        {todayPlan.length}
                                     </span>
                                 </a>
                             </li>
@@ -40,9 +44,8 @@ const Navbar = () => {
                             <li>
                                 <a>
                                     Saved
-                                    <span className="badge badge-neutral badge-xs ml-1 border border-gray-400 border-dotted  font-semibold ">
-                                        {/* inline-flex items-center justify-center */}
-                                        0
+                                    <span className="ml-2 w-6 h-6 rounded-full border border-gray-600 border-dotted font-semibold inline-flex items-center justify-center">
+                                        {savedExercises.length}
                                     </span>
                                 </a>
                             </li>
