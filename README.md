@@ -2,10 +2,6 @@
 
 FitLog is a modern and responsive workout library web application designed to help users explore exercises, create a daily workout plan, save exercises for later, and track completed workouts.
 
-## 🚀 Live Project
-
-[FitLog Website](https://github.com/shahin6452/Fit-Log-Website)
-
 ## 📌 Project Overview
 
 FitLog provides a simple and clean interface for discovering workout exercises and organizing them into a personal workout plan.
@@ -82,15 +78,3 @@ The application provides feedback messages for actions such as:
 - Removing an exercise
 - Marking a workout as completed
 - Trying to add an exercise that is already in the plan
-
-## 📂 Project Structure
-
-```text
-Fit-Log-Website/
-├── public/
-├── src/
-│   └── app/
-├── package.json
-├── next.config.mjs
-├── postcss.config.mjs
-└── README.md
