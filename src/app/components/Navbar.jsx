@@ -1,12 +1,12 @@
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-    const links = <>
-        <li><Link className='rounded-full px-4 py-2 text-gray-300 hover:bg-lime-500/10 hover:text-lime-400' href='#'>Workouts</Link></li>
-        <li><Link className='rounded-full px-4 py-2 text-gray-300 hover:bg-lime-500/10 hover:text-lime-400' href='#'>My Plan</Link></li>
-    </>
+    const pathName = usePathname()
     return (
         <div className='mt-3 mb-6'>
             <div className="navbar container mx-auto">
@@ -25,8 +25,8 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-44"
                         >
-                            <li><Link  href='#'>Workouts</Link></li>
-                            <li><Link  href='#'>My Plan</Link></li>
+                            <li><Link className={` ${pathName === '/' ? 'text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/'>Workouts</Link></li>
+                            <li><Link className={` ${pathName === '/plans' ? 'text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/plans'>My Plan</Link></li>
 
                             <li>
                                 <a>
@@ -53,7 +53,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:navbar-start">
-                    <Link href="#" className="text-xl font-bold">
+                    <Link href="/" className="text-xl font-bold">
                         <div className="flex gap-2 justify-center items-center">
                             <Image
                                 src="/assets/logo.png"
@@ -73,8 +73,8 @@ const Navbar = () => {
                 {/* Desktop Center */}
                 <div className="hidden md:flex navbar-center">
                     <ul className="menu menu-horizontal gap-2">
-                        <li><Link className='rounded-full px-4 py-1 text-gray-300 hover:bg-lime-500/10 hover:text-lime-400' href='#'>Workouts</Link></li>
-                        <li><Link className='rounded-full px-4 py-1 text-gray-300 hover:bg-lime-500/10 hover:text-lime-400' href='#'>My Plan</Link></li>
+                        <li><Link className={`rounded-full px-4 py-1 ${pathName === '/' ? 'bg-lime-500/20 text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/'>Workouts</Link></li>
+                        <li><Link className={`rounded-full px-4 py-1 ${pathName === '/plans' ? 'bg-lime-500/20 text-lime-400' : 'text-gray-300 hover:bg-lime-500/20 hover:text-lime-400'}`} href='/plans'>My Plan</Link></li>
                     </ul>
                 </div>
 
