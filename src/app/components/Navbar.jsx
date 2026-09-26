@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><Link className='rounded-full px-4 py-2 text-gray-300 hover:bg-lime-500/10 hover:text-lime-400' href='#'>My Plan</Link></li>
     </>
     return (
-        <div>
+        <div className='mt-3 mb-6'>
             <div className="navbar container mx-auto">
 
                 {/* Mobile Menu */}

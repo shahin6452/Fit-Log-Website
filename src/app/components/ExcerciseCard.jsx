@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
 import { oswald } from "../fonts";
+import Link from 'next/link';
 
 const ExcerciseCard = ({ exercise }) => {
     const { image, muscleGroups, name, equipment, duration, caloriesBurned, rating } = exercise
     return (
-        <div>
+            <Link href={`/library/${exercise.id}`} className="block hover:scale-[1.03] transition-transform duration-300">
             <div className="card bg-[#101116] border border-[#24262d] rounded-2xl overflow-hidden">
 
                 {/* Image */}
@@ -22,7 +23,7 @@ const ExcerciseCard = ({ exercise }) => {
                 <div className="card-body p-6">
                     <div className="flex gap-2">
                         {
-                            muscleGroups.map(elem => <div className="badge bg-[#C2F800] text-black border-none font-bold">{elem}</div>)
+                            muscleGroups.map((elem, index) => <div key={index} className="badge bg-[#C2F800] text-black border-none font-bold">{elem}</div>)
                         }
                     </div>
 
@@ -45,7 +46,7 @@ const ExcerciseCard = ({ exercise }) => {
 
                 </div>
             </div>
-        </div>
+            </Link>
     )
 };
 
