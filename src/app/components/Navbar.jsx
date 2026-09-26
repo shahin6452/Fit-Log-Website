@@ -61,23 +61,23 @@ const Navbar = () => {
                             </li>
 
                             <li>
-                                <a className="text-gray-300">
+                                <Link href="/my-plan" className="text-gray-300">
                                     Plan
 
                                     <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-lime-400 text-xs font-semibold text-black">
                                         {todayPlan.length}
                                     </span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a className="text-gray-300">
+                                <Link href="/my-plan" className="text-gray-300">
                                     Saved
 
                                     <span className="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-dotted border-gray-600 text-xs font-semibold">
                                         {savedExercises.length}
                                     </span>
-                                </a>
+                                </Link>
                             </li>
 
                         </ul>
