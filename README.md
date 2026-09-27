@@ -2,6 +2,9 @@
 
 FitLog is a modern and responsive workout library web application designed to help users explore exercises, create a daily workout plan, save exercises for later, and track completed workouts.
 
+## 📌 Live Link
+https://fit-log-website-delta.vercel.app/
+
 ## 📌 Project Overview
 
 FitLog provides a simple and clean interface for discovering workout exercises and organizing them into a personal workout plan.
